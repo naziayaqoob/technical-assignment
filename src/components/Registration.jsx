@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Button from './Button/Button';
 import HeroImg from '../assets/images/hero-banner-img-2.png';
 
@@ -47,6 +47,16 @@ const Registration = () => {
         setFormData({ name: '', company: '', email: '' });
     };
 
+    useEffect(() => {
+        if (submitted) {
+            const timer = setTimeout(() => {
+                setSubmitted(false);
+                setShowSuccessMessage(false);
+            }, 3000);
+            return () => clearTimeout(timer);
+        }
+    }, [submitted]);
+
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData((prevData) => ({
@@ -82,7 +92,6 @@ const Registration = () => {
                             name="name"
                             value={formData.name}
                             onChange={handleChange}
-                            required
                             className={`appearance-none rounded w-full leading-tight focus:outline-none focus:shadow-outline ${errors.name ? 'border-red-500' : ''}`}
                         />
                         {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name}</p>}
@@ -102,13 +111,12 @@ const Registration = () => {
                     <div className="mb-6">
                         <label htmlFor="email" className="block mb-2 text-black">Email address <span className="text-red-500">*</span></label>
                         <input
-                            type="email"
+                            type="text"
                             id="email"
                             placeholder="Enter your email address"
                             name="email"
                             value={formData.email}
                             onChange={handleChange}
-                            required
                             className={`appearance-none rounded w-full leading-tight focus:outline-none focus:shadow-outline ${errors.email ? 'border-red-500' : ''}`}
                         />
                         {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email}</p>}
