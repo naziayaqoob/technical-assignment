@@ -1,0 +1,35 @@
+/* Header.css */
+.header {
+    margin: 60px auto 100px;
+}
+
+@media (max-width: 768px) {
+    .header {
+        margin: 30px auto 0;
+    }
+    .menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        background: linear-gradient(to top, rgba(246, 251, 248, 1), rgba(246, 251, 248, 1), rgba(246, 251, 248, 0));
+        position: absolute;
+        top: 60px;
+        left: 0;
+        z-index: 10;
+        transition: max-height 0.3s ease-in-out;
+        overflow: hidden;
+        max-height: 0;
+        padding-bottom: 25px;
+    }
+    .menu.open {
+        display: flex;
+        max-height: 500px;
+    }
+    .menu.closed {
+        max-height: 0;
+    }
+    .logo {
+        margin-left: 10px;
+    }
+}

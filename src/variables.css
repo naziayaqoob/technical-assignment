@@ -1,0 +1,19 @@
+/* Define CSS variables */
+:root {
+    --font-family: 'Inter', sans-serif;
+    --font-size: 16px;
+    --line-height: 1.208;
+    --font-weight-light: 400;
+    --color-text: #515151;
+    --color-background: rgba(235, 240, 255, 1);
+    --heading-text: #000;
+    --heading-heavy: 800;
+    --heading-bold: 700;
+    --color-secondary: #46B0E6;
+    --border-color: #CBCBCB;
+    --input-padding: 16px;
+    --input-height: 50px;
+    --input-border: #DEE6FF;
+    --input-bg: #F9FAFF;
+  }
+  
