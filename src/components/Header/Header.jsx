@@ -16,7 +16,9 @@ const Header = () => {
         <header className="container max-w-custom mx-auto flex flex-col md:flex-row items-center justify-between header">
             <div className="flex justify-between w-full md:w-auto">
                 <div className="logo">
-                    <img src={Logo} alt="Logo" className="h-10" />
+                    <Link to="/">
+                        <img src={Logo} alt="Logo" className="h-10" />
+                    </Link>
                 </div>
                 <div className="md:hidden">
                     <button onClick={toggleMenu} className="text-gray-700 focus:outline-none">

@@ -10,7 +10,9 @@ const Footer = () => {
             <div className="flex flex-col md:flex-row justify-between items-center">
                 <div className="flex justify-center w-full md:w-auto mb-4 md:mb-0">
                     <div className="logo">
-                        <img src={Logo} alt="Logo" className="h-10 mx-auto" />
+                        <Link to="/">
+                            <img src={Logo} alt="Logo" className="h-10" />
+                        </Link>
                     </div>
                 </div>
                 <nav className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6 w-full md:w-auto">
